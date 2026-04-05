@@ -1,0 +1,57 @@
+<header class="header">
+  <div class="header-container">
+    <div class="logo">
+      <h1>CleCroma Tech</h1>
+    </div>
+
+    <!-- Menu Hamburguesa -->
+    <button class="hamburger" [class.open]="menuOpen()" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Nav Desktop y Mobile -->
+    <nav class="navbar" [class.open]="menuOpen()">
+      <ul>
+        <li>
+          <a 
+            routerLink="/" 
+            routerLinkActive="active" 
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeMenu()"
+          >
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a 
+            routerLink="/servicios" 
+            routerLinkActive="active"
+            (click)="closeMenu()"
+          >
+            Servicios
+          </a>
+        </li>
+        <li>
+          <a 
+            routerLink="/recomendaciones" 
+            routerLinkActive="active"
+            (click)="closeMenu()"
+          >
+            Recomendaciones
+          </a>
+        </li>
+        <li>
+          <a 
+            routerLink="/contacto" 
+            routerLinkActive="active"
+            (click)="closeMenu()"
+          >
+            Contacto
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

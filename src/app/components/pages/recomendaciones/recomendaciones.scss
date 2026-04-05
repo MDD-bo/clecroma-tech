@@ -1,0 +1,175 @@
+.recomendaciones-page {
+  animation: fadeIn 0.5s ease;
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 2rem;
+      color: #0066cc;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 0;
+    }
+  }
+
+  .recomendaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    .recomendacion-card {
+      background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 5px solid #0066cc;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 102, 204, 0.2);
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        .icono {
+          font-size: 2.5rem;
+          display: flex;
+          align-items: center;
+        }
+
+        h3 {
+          margin: 0;
+          color: #0066cc;
+          font-size: 1.2rem;
+        }
+      }
+
+      .descripcion {
+        color: #666;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .detalles {
+        h4 {
+          color: #333;
+          margin: 0 0 0.75rem 0;
+          font-size: 0.95rem;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+
+            .checkmark {
+              color: #ff6b35;
+              font-weight: bold;
+              flex-shrink: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tips-section {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 3rem;
+
+    h2 {
+      text-align: center;
+      color: #0066cc;
+      margin-bottom: 2rem;
+    }
+
+    .tips-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+
+      .tip-item {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-top: 3px solid #ff6b35;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+        strong {
+          display: block;
+          color: #0066cc;
+          margin-bottom: 0.5rem;
+          font-size: 1rem;
+        }
+
+        p {
+          margin: 0;
+          color: #666;
+          font-size: 0.9rem;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}
+
+// Animaciones
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Mobile
+@media (max-width: 768px) {
+  .recomendaciones-page {
+    .page-header h1 {
+      font-size: 1.5rem;
+    }
+
+    .recomendaciones-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .tips-container {
+      grid-template-columns: 1fr;
+    }
+  }
+}

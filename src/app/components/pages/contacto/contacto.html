@@ -1,0 +1,83 @@
+<section class="contacto-page">
+  <h1>Solicitud de Soporte</h1>
+  <p class="subtitle">Contactanos para solicitar nuestros servicios</p>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+    <div class="form-group">
+      <label for="nombre">Nombre *</label>
+      <input 
+        type="text" 
+        id="nombre" 
+        formControlName="nombre"
+        placeholder="Tu nombre completo"
+        required
+      >
+      <span class="error" *ngIf="touchedFields['nombre'] && contactForm.get('nombre')?.invalid">
+        El nombre es requerido
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo Electronico *</label>
+      <input 
+        type="email" 
+        id="email" 
+        formControlName="email"
+        placeholder="tu@correo.com"
+        required
+      >
+      <span class="error" *ngIf="touchedFields['email'] && contactForm.get('email')?.invalid">
+        Ingresa un correo valido
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Telefono *</label>
+      <input 
+        type="tel" 
+        id="telefono" 
+        formControlName="telefono"
+        placeholder="Tu numero de telefono"
+        required
+      >
+      <span class="error" *ngIf="touchedFields['telefono'] && contactForm.get('telefono')?.invalid">
+        El telefono es requerido
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="servicio">Servicio Requerido *</label>
+      <select id="servicio" formControlName="servicio" required>
+        <option value="">Selecciona un servicio</option>
+        <option value="soporte">Soporte Tecnico</option>
+        <option value="preventivo">Mantenimiento Preventivo</option>
+        <option value="correctivo">Mantenimiento Correctivo</option>
+      </select>
+      <span class="error" *ngIf="touchedFields['servicio'] && contactForm.get('servicio')?.invalid">
+        Selecciona un servicio
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="problema">Descripcion del Problema *</label>
+      <textarea 
+        id="problema" 
+        formControlName="problema"
+        placeholder="Describe el problema que experimentas"
+        rows="5"
+        required
+      ></textarea>
+      <span class="error" *ngIf="touchedFields['problema'] && contactForm.get('problema')?.invalid">
+        Por favor describe el problema
+      </span>
+    </div>
+
+    <button type="submit" class="submit-btn" [disabled]="contactForm.invalid">
+      Enviar Solicitud
+    </button>
+  </form>
+
+  <div class="success-message" *ngIf="submitted">
+    <p>Gracias! Tu solicitud ha sido enviada correctamente.</p>
+  </div>
+</section>

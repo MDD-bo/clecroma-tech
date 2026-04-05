@@ -1,0 +1,49 @@
+<section class="recomendaciones-page">
+  <div class="page-header">
+    <h1>Recomendaciones de Mantenimiento</h1>
+    <p class="subtitle">Consejos para mantener tu computadora en óptimas condiciones</p>
+  </div>
+
+  <div class="recomendaciones-grid">
+    <div 
+      *ngFor="let rec of recomendaciones; let i = index" 
+      class="recomendacion-card"
+      [style.animation]="'fadeInUp 0.5s ease ' + (i * 0.1) + 's both'"
+    >
+      <div class="card-header">
+        <div class="icono">{{ rec.icono }}</div>
+        <h3>{{ rec.titulo }}</h3>
+      </div>
+      
+      <p class="descripcion">{{ rec.descripcion }}</p>
+
+      <div class="detalles">
+        <h4>Detalles:</h4>
+        <ul>
+          <li *ngFor="let detalle of rec.detalles">
+            <span class="checkmark">✓</span> {{ detalle }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="tips-section">
+    <h2>Tips Adicionales</h2>
+    <div class="tips-container">
+      <div class="tip-item">
+        <strong>📧 Email Regular</strong>
+        <p>Obtén actualizaciones sobre mantenimiento preventivo</p>
+      </div>
+      <div class="tip-item">
+        <strong>⏰ Programación</strong>
+        <p>Planifica mantenimiento cada 6 meses</p>
+      </div>
+      <div class="tip-item">
+        <strong>🚨 Signos de Alerta</strong>
+        <p>Contacta si notas ruidos, lentitud o sobrecalentamiento</p>
+      </div>
+    </div>
+  </div>
+</section>
+

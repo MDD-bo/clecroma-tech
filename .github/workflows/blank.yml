@@ -36,6 +36,6 @@ jobs:
       - name: desplegar github pages
         uses: crazy-max/ghaction-github-pages@v5.0.0
         with: 
-         build_dir: dist/
+         build_dir: dist/clecroma
         env: 
          GIHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
